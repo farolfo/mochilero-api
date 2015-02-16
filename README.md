@@ -30,6 +30,7 @@ In order to post a new hitch, just post the coordenates.
 In order to retrieve the hitchs in a given zone, just tell us the lat/long and a radius in miles.
 ```
 > GET /hitchs?lat=37.765791&long=-122.408219&radius=20
+> Content-Type: application/json
 
 < 200
 < [
