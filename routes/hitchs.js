@@ -4,7 +4,7 @@ var router  = express.Router();
 
 router.get('/', function(req, res) {
   models.Hitch.findAll().then(function(hitchs) {
-    res.json({hithcs: hitchs});
+    res.json(hitchs);
   });
 });
 
