@@ -10,8 +10,6 @@ var app = express();
 // Envorinment conf
 app.set('port', process.env.PORT || 3000);
 
-app.use(bodyParser.json()); // for parsing application/json
-
 // Add headers for CORS
 app.use(function (req, res, next) {
 
@@ -31,6 +29,7 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
+app.use(bodyParser.json()); // for parsing application/json
 
 app.use('/users', users);
 app.use('/hitchs', hitchs);
