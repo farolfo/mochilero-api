@@ -2,7 +2,8 @@ var express     = require('express')
   , http        = require('http')
   , bodyParser  = require('body-parser')
   , db          = require('./models')
-  , users       = require('./routes/users');
+  , users       = require('./routes/users')
+  , hitchs      = require('./routes/hitchs');
 
 var app = express();
 
@@ -12,6 +13,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json()); // for parsing application/json
 
 app.use('/users', users);
+app.use('/hitchs', hitchs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -35,7 +37,7 @@ db.sequelize.sync().complete(function(err) {
     throw err[0];
   } else {
     http.createServer(app).listen(app.get('port'), function(){
-        console.log('Express server listening on port' + app.get('port'));
+        console.log('Express server listening on port ' + app.get('port'));
     });
   }
 });
