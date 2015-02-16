@@ -11,9 +11,9 @@ Currently under development, hosted at http://mochilero-api.herokuapp.com.
 The API runs in node, using expressjs and [sequelize](http://sequelizejs.com/) as the ORM to connect to a PostgreSQL database.
 The UI code may be found [here](https://github.com/farolfo/mochilero-ui).
 
-# API Definition
+## API Definition
 
-###/hitchs resource
+####/hitchs resource
 The API provides the locations were backapackers were hitched on the road. This data can be created and retrieved in the /hitchs resource.
 
 In order to post a new hitch, just post the coordenates.
